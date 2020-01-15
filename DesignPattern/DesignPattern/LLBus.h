@@ -13,10 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LLBus : NSObject
 
-- (LLDriver *)needDriverNum:(NSInteger)num;
-
 - (void)showDriverInfo:(LLDriver *)driver;
-
+///简单工厂
+- (LLDriver *)needDriverNum:(NSInteger)num;
+///工厂方法
 - (LLDriver *)needDriver;
 @end
 

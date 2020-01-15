@@ -14,14 +14,12 @@
 		4844706B23C5BF3D00A20107 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4844706A23C5BF3D00A20107 /* Assets.xcassets */; };
 		4844706E23C5BF3D00A20107 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4844706C23C5BF3D00A20107 /* LaunchScreen.storyboard */; };
 		4844707123C5BF3D00A20107 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4844707023C5BF3D00A20107 /* main.m */; };
-		485057DC23CC5F2A00C290C9 /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = 485057DB23CC5F2A00C290C9 /* People.m */; };
 		485057E223CC619F00C290C9 /* LLDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 485057E123CC619F00C290C9 /* LLDriver.m */; };
 		485057E523CC61C700C290C9 /* LLDriverLi.m in Sources */ = {isa = PBXBuildFile; fileRef = 485057E423CC61C700C290C9 /* LLDriverLi.m */; };
 		485057E823CC61D300C290C9 /* LLDriverWang.m in Sources */ = {isa = PBXBuildFile; fileRef = 485057E723CC61D300C290C9 /* LLDriverWang.m */; };
 		485057EB23CC649300C290C9 /* LLBus.m in Sources */ = {isa = PBXBuildFile; fileRef = 485057EA23CC649300C290C9 /* LLBus.m */; };
 		485057EE23CDB80A00C290C9 /* LLGreenBus.m in Sources */ = {isa = PBXBuildFile; fileRef = 485057ED23CDB80A00C290C9 /* LLGreenBus.m */; };
 		485057F123CDB81900C290C9 /* LLRedBus.m in Sources */ = {isa = PBXBuildFile; fileRef = 485057F023CDB81900C290C9 /* LLRedBus.m */; };
-		485057F423CDB82D00C290C9 /* TelevisionWall.m in Sources */ = {isa = PBXBuildFile; fileRef = 485057F323CDB82D00C290C9 /* TelevisionWall.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +35,6 @@
 		4844706D23C5BF3D00A20107 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4844706F23C5BF3D00A20107 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4844707023C5BF3D00A20107 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		485057DA23CC5F2A00C290C9 /* People.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = People.h; sourceTree = "<group>"; };
-		485057DB23CC5F2A00C290C9 /* People.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = People.m; sourceTree = "<group>"; };
 		485057E023CC619F00C290C9 /* LLDriver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLDriver.h; sourceTree = "<group>"; };
 		485057E123CC619F00C290C9 /* LLDriver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLDriver.m; sourceTree = "<group>"; };
 		485057E323CC61C700C290C9 /* LLDriverLi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLDriverLi.h; sourceTree = "<group>"; };
@@ -51,8 +47,6 @@
 		485057ED23CDB80A00C290C9 /* LLGreenBus.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLGreenBus.m; sourceTree = "<group>"; };
 		485057EF23CDB81900C290C9 /* LLRedBus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLRedBus.h; sourceTree = "<group>"; };
 		485057F023CDB81900C290C9 /* LLRedBus.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLRedBus.m; sourceTree = "<group>"; };
-		485057F223CDB82D00C290C9 /* TelevisionWall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TelevisionWall.h; sourceTree = "<group>"; };
-		485057F323CDB82D00C290C9 /* TelevisionWall.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TelevisionWall.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +85,6 @@
 				4844706223C5BF3900A20107 /* SceneDelegate.m */,
 				4844706423C5BF3900A20107 /* ViewController.h */,
 				4844706523C5BF3900A20107 /* ViewController.m */,
-				485057DA23CC5F2A00C290C9 /* People.h */,
-				485057DB23CC5F2A00C290C9 /* People.m */,
 				485057E923CC649300C290C9 /* LLBus.h */,
 				485057EA23CC649300C290C9 /* LLBus.m */,
 				485057E023CC619F00C290C9 /* LLDriver.h */,
@@ -105,8 +97,6 @@
 				485057ED23CDB80A00C290C9 /* LLGreenBus.m */,
 				485057EF23CDB81900C290C9 /* LLRedBus.h */,
 				485057F023CDB81900C290C9 /* LLRedBus.m */,
-				485057F223CDB82D00C290C9 /* TelevisionWall.h */,
-				485057F323CDB82D00C290C9 /* TelevisionWall.m */,
 				4844706723C5BF3900A20107 /* Main.storyboard */,
 				4844706A23C5BF3D00A20107 /* Assets.xcassets */,
 				4844706C23C5BF3D00A20107 /* LaunchScreen.storyboard */,
@@ -189,13 +179,11 @@
 				4844706623C5BF3900A20107 /* ViewController.m in Sources */,
 				485057EB23CC649300C290C9 /* LLBus.m in Sources */,
 				4844706023C5BF3900A20107 /* AppDelegate.m in Sources */,
-				485057DC23CC5F2A00C290C9 /* People.m in Sources */,
 				4844707123C5BF3D00A20107 /* main.m in Sources */,
 				485057E223CC619F00C290C9 /* LLDriver.m in Sources */,
 				485057E823CC61D300C290C9 /* LLDriverWang.m in Sources */,
 				485057EE23CDB80A00C290C9 /* LLGreenBus.m in Sources */,
 				485057E523CC61C700C290C9 /* LLDriverLi.m in Sources */,
-				485057F423CDB82D00C290C9 /* TelevisionWall.m in Sources */,
 				4844706323C5BF3900A20107 /* SceneDelegate.m in Sources */,
 				485057F123CDB81900C290C9 /* LLRedBus.m in Sources */,
 			);

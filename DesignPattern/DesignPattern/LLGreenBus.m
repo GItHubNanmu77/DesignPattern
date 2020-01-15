@@ -11,8 +11,8 @@
 
 @implementation LLGreenBus
 - (LLDriver *)needDriver {
-    LLDriverLi *movie = [[LLDriverLi alloc] init];
-    return movie;
+    LLDriverLi *driver = [[LLDriverLi alloc] init];
+    return driver;
 }
 
 @end

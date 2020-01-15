@@ -11,7 +11,7 @@
 
 @implementation LLRedBus
 - (LLDriver *)needDriver {
-    LLDriverWang *cartoon = [[LLDriverWang alloc] init];
-    return cartoon;
+    LLDriverWang *driver = [[LLDriverWang alloc] init];
+    return driver;
 }
 @end

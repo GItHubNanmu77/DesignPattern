@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 
-#import "People.h"
 #import "LLDriver.h"
 #import "LLDriverLi.h"
 #import "LLDriverWang.h"
@@ -58,7 +57,7 @@
     
 }
 
-// 换频道
+// 换司机
 - (void)changeBus {
     
     self.workDriver = [self.bus needDriverNum:2];
@@ -93,7 +92,7 @@
 
 #pragma mark - 工厂方法模式
 
-// 简单工厂
+// 简单工厂，换车
 - (void)setupEasyTelevisionWall {
     LLBus *bus1 = [[LLBus alloc] init];
     LLDriver *driver1 = [bus1 needDriverNum:1];
@@ -106,7 +105,7 @@
     [bus2 showDriverInfo:driver2];
 }
 
-//工厂模式
+//工厂模式，换车
 - (void)setupNormalTelevisonWall{
     LLBus *bus   = [[LLGreenBus alloc] init];
     LLDriver *driver = [bus needDriver];

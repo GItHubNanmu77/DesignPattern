@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger num;
 /// 姓名
 @property (nonatomic, copy) NSString *name;
-/// 设置内容
+/// 开车
 - (void)work;
 
 @end
