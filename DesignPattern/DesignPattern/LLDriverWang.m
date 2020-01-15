@@ -11,8 +11,9 @@
 @implementation LLDriverWang
  
 
-- (void)work {
+- (void)drive {
     self.num = 2;
     self.name = @"wang";
+    self.haveLicense = YES;
 }
 @end

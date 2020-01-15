@@ -11,12 +11,12 @@
 #import "LLDriverWang.h"
 
 
-@implementation LLDriver
- 
-- (void)work {
+@implementation LLDriver 
+/// 开车
+- (void)drive {
     self.num = 0;
-    self.name = @"......";
 }
+
 
  
 

@@ -11,9 +11,10 @@
 @implementation LLDriverLi
  
 
-- (void)work {
+- (void)drive {
     self.num = 1;
     self.name = @"li";
+    self.haveLicense = YES;
 }
 
 @end

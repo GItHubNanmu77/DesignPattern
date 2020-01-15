@@ -13,7 +13,7 @@
 @implementation LLBus
 
 - (void)showDriverInfo:(LLDriver *)driver {
-    NSLog(@"司机编号：%ld，姓名是：%@",driver.num,driver.name);
+    NSLog(@"开车。。。。。司机编号：%ld，姓名是：%@",driver.num,driver.name);
 }
 
  

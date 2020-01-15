@@ -10,14 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LLDriver : NSObject
+@interface LLDriver : NSObject 
 ///编号
 @property (nonatomic, assign) NSInteger num;
 /// 姓名
 @property (nonatomic, copy) NSString *name;
-/// 开车
-- (void)work;
+/// 驾照
+@property (nonatomic, assign) BOOL haveLicense;
 
+- (void)drive;
 @end
 
 NS_ASSUME_NONNULL_END
