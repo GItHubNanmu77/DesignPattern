@@ -13,7 +13,7 @@
 
 - (void)work {
     self.num = 1;
-    self.content = @"movie";
+    self.name = @"li";
 }
 
 @end

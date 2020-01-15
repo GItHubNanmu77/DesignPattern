@@ -13,8 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LLDriver : NSObject
 ///编号
 @property (nonatomic, assign) NSInteger num;
-/// 内容
-@property (nonatomic, copy) NSString *content;
+/// 姓名
+@property (nonatomic, copy) NSString *name;
 /// 设置内容
 - (void)work;
 

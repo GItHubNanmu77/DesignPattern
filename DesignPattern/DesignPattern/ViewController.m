@@ -41,7 +41,7 @@
 }
 
 #pragma mark - 简单工厂模式
-- (void)watchTV {
+- (void)startDrive {
     //初始化电视
     LLBus *bus = [[LLBus alloc] init];
     self.bus = bus;
@@ -54,39 +54,39 @@
     [self.workDriver work];
     
     //播放频道内容
-    [self.bus playChannel:self.workDriver];
+    [self.bus showDriverInfo:self.workDriver];
     
 }
 
 // 换频道
-- (void)changeChannel {
+- (void)changeBus {
     
     self.workDriver = [self.bus needDriverNum:2];
     
     [self.workDriver work];
     
-    [self.bus playChannel:self.workDriver];
+    [self.bus showDriverInfo:self.workDriver];
 }
 
 - (UIButton*)btnWatch{
     if(!_btnWatch){
         _btnWatch = [[UIButton alloc]initWithFrame:CGRectMake(150, 100, 90, 30)];
-        [_btnWatch setTitle:@"看电视" forState:UIControlStateNormal];
+        [_btnWatch setTitle:@"开车" forState:UIControlStateNormal];
         [_btnWatch setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         _btnWatch.backgroundColor = [UIColor whiteColor];
         _btnWatch.titleLabel.font = [UIFont systemFontOfSize:15];
-        [_btnWatch addTarget:self action:@selector(watchTV) forControlEvents:UIControlEventTouchUpInside];
+        [_btnWatch addTarget:self action:@selector(startDrive) forControlEvents:UIControlEventTouchUpInside];
     }
     return _btnWatch;
 }
 - (UIButton*)btnChange{
     if(!_btnChange){
         _btnChange = [[UIButton alloc]initWithFrame:CGRectMake(150, 150, 90, 30)];
-        [_btnChange setTitle:@"换频道" forState:UIControlStateNormal];
+        [_btnChange setTitle:@"换车" forState:UIControlStateNormal];
         [_btnChange setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         _btnChange.backgroundColor = [UIColor whiteColor];
         _btnChange.titleLabel.font = [UIFont systemFontOfSize:15];
-        [_btnChange addTarget:self action:@selector(changeChannel) forControlEvents:UIControlEventTouchUpInside];
+        [_btnChange addTarget:self action:@selector(changeBus) forControlEvents:UIControlEventTouchUpInside];
     }
     return _btnChange;
 }
@@ -98,12 +98,12 @@
     LLBus *bus1 = [[LLBus alloc] init];
     LLDriver *driver1 = [bus1 needDriverNum:1];
     [driver1 work];
-    [bus1 playChannel:driver1];
+    [bus1 showDriverInfo:driver1];
     
     LLBus *bus2 = [[LLBus alloc] init];
     LLDriver *driver2 = [bus2 needDriverNum:2];
     [driver2 work];
-    [bus2 playChannel:driver2];
+    [bus2 showDriverInfo:driver2];
 }
 
 //工厂模式
@@ -111,7 +111,7 @@
     LLBus *bus   = [[LLGreenBus alloc] init];
     LLDriver *driver = [bus needDriver];
     [driver work];
-    [bus playChannel:driver];
+    [bus showDriverInfo:driver];
 }
 
 @end

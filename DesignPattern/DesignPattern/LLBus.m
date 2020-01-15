@@ -12,8 +12,8 @@
 
 @implementation LLBus
 
-- (void)playChannel:(LLDriver *)driver {
-    NSLog(@"播放频道：%ld，内容是：%@",driver.num,driver.content);
+- (void)showDriverInfo:(LLDriver *)driver {
+    NSLog(@"司机编号：%ld，姓名是：%@",driver.num,driver.name);
 }
 
  

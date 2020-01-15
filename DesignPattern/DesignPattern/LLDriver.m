@@ -15,7 +15,7 @@
  
 - (void)work {
     self.num = 0;
-    self.content = @"......";
+    self.name = @"......";
 }
 
  

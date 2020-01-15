@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (LLDriver *)needDriverNum:(NSInteger)num;
 
-- (void)playChannel:(LLDriver *)driver;
+- (void)showDriverInfo:(LLDriver *)driver;
 
 - (LLDriver *)needDriver;
 @end

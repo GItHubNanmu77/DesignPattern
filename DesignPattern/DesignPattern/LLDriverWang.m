@@ -13,6 +13,6 @@
 
 - (void)work {
     self.num = 2;
-    self.content = @"cartoon";
+    self.name = @"wang";
 }
 @end
