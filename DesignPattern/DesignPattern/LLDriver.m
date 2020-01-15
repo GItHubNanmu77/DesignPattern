@@ -15,6 +15,11 @@
 /// 开车
 - (void)drive {
     self.num = 0;
+    if (self.haveLicense) {
+        NSLog(@"有驾照，编号：%ld，姓名是：%@",self.num,self.name);
+    } else {
+        NSLog(@"没驾照，不能开车");
+    }
 }
 
 

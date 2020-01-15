@@ -13,10 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol LLBusProtocol <NSObject>
 
-@property (nonatomic, assign) id<LLDriveProtocol> driveProtocol;
-
-// 有20个座位
-- (void)haveTwentySites;
+- (void)needHaveLicensePeople:(id<LLDriveProtocol>)people;
 
 @end
 

@@ -10,4 +10,11 @@
 
 @implementation LLCar
 
+- (void)needHaveLicensePeople:(id<LLDriveProtocol>)people {
+    [people haveLicense];
+}
+
+
+
+
 @end

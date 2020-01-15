@@ -1,5 +1,5 @@
 //
-//  LLDriveProtocol.h
+//  LLPeopleZhang.h
 //  DesignPattern
 //
 //  Created by lzy on 2020/1/15.
@@ -7,12 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LLDriveProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol LLDriveProtocol <NSObject>
-//有驾照
-- (void)haveLicense;
+@interface LLPeopleZhang : NSObject <LLDriveProtocol>
 
 @end
 

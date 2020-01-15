@@ -13,8 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LLBus : NSObject
 /// 车牌号
-@property (nonatomic, copy) NSString *busNum;
-
+@property (nonatomic, assign) NSInteger busNum;
+/// 座位
+@property (nonatomic, assign) NSInteger sitesCount;
 
 - (void)showDriverInfo:(LLDriver *)driver;
 ///简单工厂

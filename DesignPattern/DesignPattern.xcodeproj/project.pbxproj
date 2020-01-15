@@ -22,6 +22,7 @@
 		485057F123CDB81900C290C9 /* LLRedBus.m in Sources */ = {isa = PBXBuildFile; fileRef = 485057F023CDB81900C290C9 /* LLRedBus.m */; };
 		485057F723CEE63A00C290C9 /* LLBusController.m in Sources */ = {isa = PBXBuildFile; fileRef = 485057F623CEE63A00C290C9 /* LLBusController.m */; };
 		485057FC23CF05E900C290C9 /* LLCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 485057FB23CF05E900C290C9 /* LLCar.m */; };
+		485057FF23CF068500C290C9 /* LLPeopleZhang.m in Sources */ = {isa = PBXBuildFile; fileRef = 485057FE23CF068500C290C9 /* LLPeopleZhang.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,8 @@
 		485057F923CF004700C290C9 /* LLBusProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLBusProtocol.h; sourceTree = "<group>"; };
 		485057FA23CF05E900C290C9 /* LLCar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLCar.h; sourceTree = "<group>"; };
 		485057FB23CF05E900C290C9 /* LLCar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLCar.m; sourceTree = "<group>"; };
+		485057FD23CF068500C290C9 /* LLPeopleZhang.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLPeopleZhang.h; sourceTree = "<group>"; };
+		485057FE23CF068500C290C9 /* LLPeopleZhang.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLPeopleZhang.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,12 +98,14 @@
 				4844706523C5BF3900A20107 /* ViewController.m */,
 				485057F523CEE63A00C290C9 /* LLBusController.h */,
 				485057F623CEE63A00C290C9 /* LLBusController.m */,
-				485057F823CEFC3F00C290C9 /* LLDriveProtocol.h */,
 				485057F923CF004700C290C9 /* LLBusProtocol.h */,
+				485057F823CEFC3F00C290C9 /* LLDriveProtocol.h */,
 				485057E923CC649300C290C9 /* LLBus.h */,
 				485057EA23CC649300C290C9 /* LLBus.m */,
 				485057FA23CF05E900C290C9 /* LLCar.h */,
 				485057FB23CF05E900C290C9 /* LLCar.m */,
+				485057FD23CF068500C290C9 /* LLPeopleZhang.h */,
+				485057FE23CF068500C290C9 /* LLPeopleZhang.m */,
 				485057E023CC619F00C290C9 /* LLDriver.h */,
 				485057E123CC619F00C290C9 /* LLDriver.m */,
 				485057E323CC61C700C290C9 /* LLDriverLi.h */,
@@ -194,6 +199,7 @@
 				4844706623C5BF3900A20107 /* ViewController.m in Sources */,
 				485057EB23CC649300C290C9 /* LLBus.m in Sources */,
 				4844706023C5BF3900A20107 /* AppDelegate.m in Sources */,
+				485057FF23CF068500C290C9 /* LLPeopleZhang.m in Sources */,
 				485057F723CEE63A00C290C9 /* LLBusController.m in Sources */,
 				4844707123C5BF3D00A20107 /* main.m in Sources */,
 				485057E223CC619F00C290C9 /* LLDriver.m in Sources */,

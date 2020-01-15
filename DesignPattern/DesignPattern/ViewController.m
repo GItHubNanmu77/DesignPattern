@@ -15,10 +15,14 @@
 #import "LLGreenBus.h"
 #import "LLRedBus.h"
 #import "LLBusController.h"
+#import "LLCar.h"
+#import "LLPeopleZhang.h"
+
 
 @interface ViewController ()
 @property (nonatomic, strong) UIButton *btnStart;
 @property (nonatomic, strong) UIButton *btnChange;
+@property (nonatomic, strong) UIButton *btnDo;
 @property (nonatomic, strong) LLBus *bus;
 @property (nonatomic, strong) LLDriver *workDriver;
 
@@ -38,9 +42,46 @@
 //
     [self.view addSubview:self.btnStart];
     [self.view addSubview:self.btnChange];
+    [self.view addSubview:self.btnDo];
+}
+- (UIButton*)btnStart{
+    if(!_btnStart){
+        _btnStart = [[UIButton alloc]initWithFrame:CGRectMake(150, 100, 90, 30)];
+        [_btnStart setTitle:@"开车" forState:UIControlStateNormal];
+        [_btnStart setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        _btnStart.backgroundColor = [UIColor whiteColor];
+        _btnStart.titleLabel.font = [UIFont systemFontOfSize:15];
+        [_btnStart addTarget:self action:@selector(startDrive) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _btnStart;
 }
 
-#pragma mark - 简单工厂模式
+- (UIButton*)btnChange{
+    if(!_btnChange){
+        _btnChange = [[UIButton alloc]initWithFrame:CGRectMake(150, 150, 90, 30)];
+        [_btnChange setTitle:@"换司机" forState:UIControlStateNormal];
+        [_btnChange setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        _btnChange.backgroundColor = [UIColor whiteColor];
+        _btnChange.titleLabel.font = [UIFont systemFontOfSize:15];
+        [_btnChange addTarget:self action:@selector(changeBus) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _btnChange;
+}
+
+- (UIButton*)btnDo{
+    if(!_btnDo){
+        _btnDo = [[UIButton alloc]initWithFrame:CGRectMake(150, 200, 90, 30)];
+        [_btnDo setTitle:@"切换模式" forState:UIControlStateNormal];
+        [_btnDo setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        _btnDo.backgroundColor = [UIColor whiteColor];
+        _btnDo.titleLabel.font = [UIFont systemFontOfSize:15];
+        [_btnDo addTarget:self action:@selector(setupBridgeMode) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _btnDo;
+}
+
+#pragma mark - 单一职责原则
+// 简单工厂模式
 - (void)startDrive {
     //初始化公交车
     LLBus *bus = [[LLBus alloc] init];
@@ -68,30 +109,10 @@
     [self.bus showDriverInfo:self.workDriver];
 }
 
-- (UIButton*)btnStart{
-    if(!_btnStart){
-        _btnStart = [[UIButton alloc]initWithFrame:CGRectMake(150, 100, 90, 30)];
-        [_btnStart setTitle:@"开车" forState:UIControlStateNormal];
-        [_btnStart setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        _btnStart.backgroundColor = [UIColor whiteColor];
-        _btnStart.titleLabel.font = [UIFont systemFontOfSize:15];
-        [_btnStart addTarget:self action:@selector(startDrive) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _btnStart;
-}
-- (UIButton*)btnChange{
-    if(!_btnChange){
-        _btnChange = [[UIButton alloc]initWithFrame:CGRectMake(150, 150, 90, 30)];
-        [_btnChange setTitle:@"换司机" forState:UIControlStateNormal];
-        [_btnChange setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        _btnChange.backgroundColor = [UIColor whiteColor];
-        _btnChange.titleLabel.font = [UIFont systemFontOfSize:15];
-        [_btnChange addTarget:self action:@selector(changeBus) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _btnChange;
-}
 
-#pragma mark - 工厂方法模式
+
+#pragma mark - 开放-封闭原则
+/// 工厂方法模式
 
 // 简单工厂
 // 换车，就需要修改bus内部的所有判断逻辑，复制给新的bus。客户知道。
@@ -122,8 +143,9 @@
     [bus showDriverInfo:driver];
 }
 
-#pragma mark - 抽象工厂模式
+#pragma mark - 里式替换原则
 // 抽象工厂
+
 // 换车，在控制中心内部换，客户不知道。
 // 换司机，在车的内部修改司机。客户不知道。
 // 增加司机，就需要增加司机，还要增加车，还需要在控制中心修改。
@@ -148,17 +170,26 @@
 }
 
 #pragma mark - 依赖倒置原则
+// 桥接模式
 - (void)setupBridgeMode{
-//    
-//    id<LLBusProtocol> bus = [[LLBus alloc] init];
-//    [bus.driveProtocol drive];
+    
+    id<LLBusProtocol> car = [[LLCar alloc] init];
+    
+    id<LLDriveProtocol> people = [[LLPeopleZhang alloc] init];
+    
+    [car needHaveLicensePeople:people];
 }
-#pragma mark - 里式替换原则
+
+
 
 #pragma mark - 迪米特原则
-
+- (void)setup {
+    
+}
 #pragma mark - 接口隔离原则
-
+- (void)setup2 {
+    
+}
 
 
 @end

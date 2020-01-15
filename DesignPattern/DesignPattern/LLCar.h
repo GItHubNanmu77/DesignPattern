@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LLBusProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LLCar : NSObject
-
+@interface LLCar : NSObject <LLBusProtocol>
+ 
 @end
 
 NS_ASSUME_NONNULL_END
