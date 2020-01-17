@@ -1,18 +1,20 @@
 //
-//  LLGreenBus.h
+//  LLStationCompany.h
 //  DesignPattern
 //
-//  Created by lzy on 2020/1/14.
+//  Created by lzy on 2020/1/17.
 //  Copyright © 2020 lzy. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "LLBus.h"
-#import "LLDriver.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LLGreenBus : LLBus
+@interface LLStationCompany : NSObject
+
+@property (nonatomic, copy) NSString *place;
+
+- (void)startDrive;
 
 @end
 

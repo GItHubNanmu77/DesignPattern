@@ -17,7 +17,10 @@
 #import "LLBusController.h"
 #import "LLCar.h"
 #import "LLPeopleZhang.h"
-
+#import "LLStationHome.h"
+#import "LLStationCompany.h"
+#import "LLPickUpPeople.h"
+#import "LLRoadLine.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) UIButton *btnStart;
@@ -43,7 +46,9 @@
     [self.view addSubview:self.btnStart];
     [self.view addSubview:self.btnChange];
     [self.view addSubview:self.btnDo];
+     
 }
+ 
 - (UIButton*)btnStart{
     if(!_btnStart){
         _btnStart = [[UIButton alloc]initWithFrame:CGRectMake(150, 100, 90, 30)];
@@ -75,7 +80,7 @@
         [_btnDo setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         _btnDo.backgroundColor = [UIColor whiteColor];
         _btnDo.titleLabel.font = [UIFont systemFontOfSize:15];
-        [_btnDo addTarget:self action:@selector(setupBridgeMode) forControlEvents:UIControlEventTouchUpInside];
+        [_btnDo addTarget:self action:@selector(setupLeastKnowledge) forControlEvents:UIControlEventTouchUpInside];
     }
     return _btnDo;
 }
@@ -144,8 +149,20 @@
 }
 
 #pragma mark - 里式替换原则
-// 抽象工厂
+// 子类必须能够替换掉他们的父类，而不改变父类原有的功能
+// 子类可以增加自己的特有方法
+- (void)liShiReplace {
+    LLBus *bus = [[LLBus alloc] init];
+    LLGreenBus *greenBus = [[LLGreenBus alloc] init];
+    [bus canDriveOnTheRoad];
+    
+    [greenBus haveBusNum];
+    [greenBus canDriveOnTheRoad];
+    [greenBus donotWannaDrive];
+    
+}
 
+// 抽象工厂
 // 换车，在控制中心内部换，客户不知道。
 // 换司机，在车的内部修改司机。客户不知道。
 // 增加司机，就需要增加司机，还要增加车，还需要在控制中心修改。
@@ -171,6 +188,10 @@
 
 #pragma mark - 依赖倒置原则
 // 桥接模式
+// 换车，不用管是什么车，只要实现了协议就可以用
+// 换司机，不用管是什么人，只要有驾照就可以。只要实现了协议就可以用
+// 分离开了车与司机的依赖，车和司机可以独立变化，拓展性好
+// 实现了细节对客户透明
 - (void)setupBridgeMode{
     
     id<LLBusProtocol> car = [[LLCar alloc] init];
@@ -182,10 +203,38 @@
 
 
 
-#pragma mark - 迪米特原则
-- (void)setup {
+#pragma mark - 迪米特原则（最少知识原则）
+// 外观模式、中介者模式、代理模式 都是很好的遵守了这个原则
+
+// 外观模式
+// 客户端可能需要通过多个子系统来完成一件事，就比较麻烦，而且客户端不关心实现过程。就需要用到外观模式。
+// 将多个子系统放到一个外观类上，客户端只接触外观类，不用管内部实现。
+- (void)setupLeastKnowledge {
     
+    LLBus *bus = [[LLGreenBus alloc] init];
+    LLDriver *driver = [bus needDriver];
+    [driver drive];
+    [bus showDriverInfo:driver];
+    
+    
+    LLStationCompany *company = [[LLStationCompany alloc] init];
+    
+    LLPickUpPeople *pickUp = [[LLPickUpPeople alloc] init];
+    
+    LLStationHome *home = [[LLStationHome alloc] init];
+    
+    [bus doSomeThing:company.place];
+    [company startDrive];
+    [bus doSomeThing:pickUp.place];
+    [pickUp pickUpPeople];
+    [bus doSomeThing:home.place];
+    [home arrived];
+    
+    LLRoadLine *line = [[LLRoadLine alloc] init];
+    [bus doSomeThing:line.places];
+    [line doThings];
 }
+
 #pragma mark - 接口隔离原则
 - (void)setup2 {
     

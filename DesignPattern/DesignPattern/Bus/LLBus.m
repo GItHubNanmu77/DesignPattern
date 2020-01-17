@@ -10,6 +10,11 @@
 #import "LLDriverLi.h"
 #import "LLDriverWang.h"
 
+@interface LLBus ()
+
+
+@end
+
 @implementation LLBus
 
 - (void)showDriverInfo:(LLDriver *)driver {
@@ -46,5 +51,23 @@
     return driver;
 }
  
+- (void)haveBusNum {
+    if (!self.isAllocAbstract) {
+        NSLog(@"\n%s这是一个抽象类，需要先实例化车",__func__);
+        NSAssert(NO, @"\n{%@} 这个类是抽象基类，需要先实例化车", NSStringFromClass([self class]));
+    }
+}
 
+- (void)canDriveOnTheRoad {
+    if (self.isAllocAbstract && self.busNum > 0) {
+        NSLog(@"\n实例方法：车牌号：%ld，能上路",self.busNum);
+    } else {
+        NSLog(@"\n实例方法：未实现抽象类，没牌照，不能上路");
+    }
+}
+
+- (void)doSomeThing:(NSString *)thing {
+    NSLog(@"开车%@",thing);
+}
+ 
 @end

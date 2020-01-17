@@ -22,6 +22,17 @@ NS_ASSUME_NONNULL_BEGIN
 - (LLDriver *)needDriverNum:(NSInteger)num;
 ///工厂方法
 - (LLDriver *)needDriver;
+
+///里式替换
+/// 是否实现抽象方法
+@property (nonatomic, assign) BOOL isAllocAbstract;
+//抽象方法，是否有牌照
+- (void)haveBusNum;
+//实现方法，判断是否能上路
+- (void)canDriveOnTheRoad;
+
+// 迪米特
+- (void)doSomeThing:(NSString *)thing;
 @end
 
 NS_ASSUME_NONNULL_END

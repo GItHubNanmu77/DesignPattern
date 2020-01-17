@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LLCar : NSObject <LLBusProtocol>
  
+- (void)goSomeWhere:(NSString *)place;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -23,6 +23,11 @@
 		485057F723CEE63A00C290C9 /* LLBusController.m in Sources */ = {isa = PBXBuildFile; fileRef = 485057F623CEE63A00C290C9 /* LLBusController.m */; };
 		485057FC23CF05E900C290C9 /* LLCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 485057FB23CF05E900C290C9 /* LLCar.m */; };
 		485057FF23CF068500C290C9 /* LLPeopleZhang.m in Sources */ = {isa = PBXBuildFile; fileRef = 485057FE23CF068500C290C9 /* LLPeopleZhang.m */; };
+		4850581923D18B6300C290C9 /* LLSpecialBus.m in Sources */ = {isa = PBXBuildFile; fileRef = 4850581823D18B6300C290C9 /* LLSpecialBus.m */; };
+		4850581C23D1990900C290C9 /* LLRoadLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4850581B23D1990900C290C9 /* LLRoadLine.m */; };
+		4850582223D1995100C290C9 /* LLStationHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 4850582123D1995100C290C9 /* LLStationHome.m */; };
+		4850582523D1996400C290C9 /* LLStationCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = 4850582423D1996400C290C9 /* LLStationCompany.m */; };
+		4850582B23D1A27400C290C9 /* LLPickUpPeople.m in Sources */ = {isa = PBXBuildFile; fileRef = 4850582A23D1A27400C290C9 /* LLPickUpPeople.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +63,16 @@
 		485057FB23CF05E900C290C9 /* LLCar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLCar.m; sourceTree = "<group>"; };
 		485057FD23CF068500C290C9 /* LLPeopleZhang.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLPeopleZhang.h; sourceTree = "<group>"; };
 		485057FE23CF068500C290C9 /* LLPeopleZhang.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLPeopleZhang.m; sourceTree = "<group>"; };
+		4850581723D18B6300C290C9 /* LLSpecialBus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLSpecialBus.h; sourceTree = "<group>"; };
+		4850581823D18B6300C290C9 /* LLSpecialBus.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLSpecialBus.m; sourceTree = "<group>"; };
+		4850581A23D1990800C290C9 /* LLRoadLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLRoadLine.h; sourceTree = "<group>"; };
+		4850581B23D1990900C290C9 /* LLRoadLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLRoadLine.m; sourceTree = "<group>"; };
+		4850582023D1995100C290C9 /* LLStationHome.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLStationHome.h; sourceTree = "<group>"; };
+		4850582123D1995100C290C9 /* LLStationHome.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLStationHome.m; sourceTree = "<group>"; };
+		4850582323D1996400C290C9 /* LLStationCompany.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLStationCompany.h; sourceTree = "<group>"; };
+		4850582423D1996400C290C9 /* LLStationCompany.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLStationCompany.m; sourceTree = "<group>"; };
+		4850582923D1A27400C290C9 /* LLPickUpPeople.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLPickUpPeople.h; sourceTree = "<group>"; };
+		4850582A23D1A27400C290C9 /* LLPickUpPeople.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLPickUpPeople.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,24 +113,17 @@
 				4844706523C5BF3900A20107 /* ViewController.m */,
 				485057F523CEE63A00C290C9 /* LLBusController.h */,
 				485057F623CEE63A00C290C9 /* LLBusController.m */,
-				485057F923CF004700C290C9 /* LLBusProtocol.h */,
-				485057F823CEFC3F00C290C9 /* LLDriveProtocol.h */,
-				485057E923CC649300C290C9 /* LLBus.h */,
-				485057EA23CC649300C290C9 /* LLBus.m */,
-				485057FA23CF05E900C290C9 /* LLCar.h */,
-				485057FB23CF05E900C290C9 /* LLCar.m */,
-				485057FD23CF068500C290C9 /* LLPeopleZhang.h */,
-				485057FE23CF068500C290C9 /* LLPeopleZhang.m */,
-				485057E023CC619F00C290C9 /* LLDriver.h */,
-				485057E123CC619F00C290C9 /* LLDriver.m */,
-				485057E323CC61C700C290C9 /* LLDriverLi.h */,
-				485057E423CC61C700C290C9 /* LLDriverLi.m */,
-				485057E623CC61D300C290C9 /* LLDriverWang.h */,
-				485057E723CC61D300C290C9 /* LLDriverWang.m */,
-				485057EC23CDB80A00C290C9 /* LLGreenBus.h */,
-				485057ED23CDB80A00C290C9 /* LLGreenBus.m */,
-				485057EF23CDB81900C290C9 /* LLRedBus.h */,
-				485057F023CDB81900C290C9 /* LLRedBus.m */,
+				4850581A23D1990800C290C9 /* LLRoadLine.h */,
+				4850581B23D1990900C290C9 /* LLRoadLine.m */,
+				4850582023D1995100C290C9 /* LLStationHome.h */,
+				4850582123D1995100C290C9 /* LLStationHome.m */,
+				4850582323D1996400C290C9 /* LLStationCompany.h */,
+				4850582423D1996400C290C9 /* LLStationCompany.m */,
+				4850582923D1A27400C290C9 /* LLPickUpPeople.h */,
+				4850582A23D1A27400C290C9 /* LLPickUpPeople.m */,
+				4850581423D14E3200C290C9 /* Bus */,
+				4850581523D14E3C00C290C9 /* Driver */,
+				4850581623D14E4900C290C9 /* MoreCar */,
 				4844706723C5BF3900A20107 /* Main.storyboard */,
 				4844706A23C5BF3D00A20107 /* Assets.xcassets */,
 				4844706C23C5BF3D00A20107 /* LaunchScreen.storyboard */,
@@ -123,6 +131,47 @@
 				4844707023C5BF3D00A20107 /* main.m */,
 			);
 			path = DesignPattern;
+			sourceTree = "<group>";
+		};
+		4850581423D14E3200C290C9 /* Bus */ = {
+			isa = PBXGroup;
+			children = (
+				485057E923CC649300C290C9 /* LLBus.h */,
+				485057EA23CC649300C290C9 /* LLBus.m */,
+				485057EC23CDB80A00C290C9 /* LLGreenBus.h */,
+				485057ED23CDB80A00C290C9 /* LLGreenBus.m */,
+				485057EF23CDB81900C290C9 /* LLRedBus.h */,
+				485057F023CDB81900C290C9 /* LLRedBus.m */,
+				4850581723D18B6300C290C9 /* LLSpecialBus.h */,
+				4850581823D18B6300C290C9 /* LLSpecialBus.m */,
+			);
+			path = Bus;
+			sourceTree = "<group>";
+		};
+		4850581523D14E3C00C290C9 /* Driver */ = {
+			isa = PBXGroup;
+			children = (
+				485057E023CC619F00C290C9 /* LLDriver.h */,
+				485057E123CC619F00C290C9 /* LLDriver.m */,
+				485057E323CC61C700C290C9 /* LLDriverLi.h */,
+				485057E423CC61C700C290C9 /* LLDriverLi.m */,
+				485057E623CC61D300C290C9 /* LLDriverWang.h */,
+				485057E723CC61D300C290C9 /* LLDriverWang.m */,
+			);
+			path = Driver;
+			sourceTree = "<group>";
+		};
+		4850581623D14E4900C290C9 /* MoreCar */ = {
+			isa = PBXGroup;
+			children = (
+				485057F923CF004700C290C9 /* LLBusProtocol.h */,
+				485057F823CEFC3F00C290C9 /* LLDriveProtocol.h */,
+				485057FA23CF05E900C290C9 /* LLCar.h */,
+				485057FB23CF05E900C290C9 /* LLCar.m */,
+				485057FD23CF068500C290C9 /* LLPeopleZhang.h */,
+				485057FE23CF068500C290C9 /* LLPeopleZhang.m */,
+			);
+			path = MoreCar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,14 +247,19 @@
 				485057FC23CF05E900C290C9 /* LLCar.m in Sources */,
 				4844706623C5BF3900A20107 /* ViewController.m in Sources */,
 				485057EB23CC649300C290C9 /* LLBus.m in Sources */,
+				4850581C23D1990900C290C9 /* LLRoadLine.m in Sources */,
 				4844706023C5BF3900A20107 /* AppDelegate.m in Sources */,
 				485057FF23CF068500C290C9 /* LLPeopleZhang.m in Sources */,
 				485057F723CEE63A00C290C9 /* LLBusController.m in Sources */,
 				4844707123C5BF3D00A20107 /* main.m in Sources */,
 				485057E223CC619F00C290C9 /* LLDriver.m in Sources */,
+				4850581923D18B6300C290C9 /* LLSpecialBus.m in Sources */,
 				485057E823CC61D300C290C9 /* LLDriverWang.m in Sources */,
 				485057EE23CDB80A00C290C9 /* LLGreenBus.m in Sources */,
+				4850582B23D1A27400C290C9 /* LLPickUpPeople.m in Sources */,
 				485057E523CC61C700C290C9 /* LLDriverLi.m in Sources */,
+				4850582523D1996400C290C9 /* LLStationCompany.m in Sources */,
+				4850582223D1995100C290C9 /* LLStationHome.m in Sources */,
 				4844706323C5BF3900A20107 /* SceneDelegate.m in Sources */,
 				485057F123CDB81900C290C9 /* LLRedBus.m in Sources */,
 			);

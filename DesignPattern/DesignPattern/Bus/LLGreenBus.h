@@ -1,5 +1,5 @@
 //
-//  LLRedBus.h
+//  LLGreenBus.h
 //  DesignPattern
 //
 //  Created by lzy on 2020/1/14.
@@ -12,8 +12,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LLRedBus : LLBus
-
+@interface LLGreenBus : LLBus
+//子类特有的方法，不想上路
+- (void)donotWannaDrive;
 @end
 
 NS_ASSUME_NONNULL_END
