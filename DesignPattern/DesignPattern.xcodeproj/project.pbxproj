@@ -73,6 +73,7 @@
 		4850582423D1996400C290C9 /* LLStationCompany.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLStationCompany.m; sourceTree = "<group>"; };
 		4850582923D1A27400C290C9 /* LLPickUpPeople.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLPickUpPeople.h; sourceTree = "<group>"; };
 		4850582A23D1A27400C290C9 /* LLPickUpPeople.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLPickUpPeople.m; sourceTree = "<group>"; };
+		4850582C23D406D200C290C9 /* LLBusSettingProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLBusSettingProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,16 +114,9 @@
 				4844706523C5BF3900A20107 /* ViewController.m */,
 				485057F523CEE63A00C290C9 /* LLBusController.h */,
 				485057F623CEE63A00C290C9 /* LLBusController.m */,
-				4850581A23D1990800C290C9 /* LLRoadLine.h */,
-				4850581B23D1990900C290C9 /* LLRoadLine.m */,
-				4850582023D1995100C290C9 /* LLStationHome.h */,
-				4850582123D1995100C290C9 /* LLStationHome.m */,
-				4850582323D1996400C290C9 /* LLStationCompany.h */,
-				4850582423D1996400C290C9 /* LLStationCompany.m */,
-				4850582923D1A27400C290C9 /* LLPickUpPeople.h */,
-				4850582A23D1A27400C290C9 /* LLPickUpPeople.m */,
 				4850581423D14E3200C290C9 /* Bus */,
 				4850581523D14E3C00C290C9 /* Driver */,
+				4850582D23D425CD00C290C9 /* RoadLine */,
 				4850581623D14E4900C290C9 /* MoreCar */,
 				4844706723C5BF3900A20107 /* Main.storyboard */,
 				4844706A23C5BF3D00A20107 /* Assets.xcassets */,
@@ -165,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				485057F923CF004700C290C9 /* LLBusProtocol.h */,
+				4850582C23D406D200C290C9 /* LLBusSettingProtocol.h */,
 				485057F823CEFC3F00C290C9 /* LLDriveProtocol.h */,
 				485057FA23CF05E900C290C9 /* LLCar.h */,
 				485057FB23CF05E900C290C9 /* LLCar.m */,
@@ -172,6 +167,21 @@
 				485057FE23CF068500C290C9 /* LLPeopleZhang.m */,
 			);
 			path = MoreCar;
+			sourceTree = "<group>";
+		};
+		4850582D23D425CD00C290C9 /* RoadLine */ = {
+			isa = PBXGroup;
+			children = (
+				4850581A23D1990800C290C9 /* LLRoadLine.h */,
+				4850581B23D1990900C290C9 /* LLRoadLine.m */,
+				4850582023D1995100C290C9 /* LLStationHome.h */,
+				4850582123D1995100C290C9 /* LLStationHome.m */,
+				4850582323D1996400C290C9 /* LLStationCompany.h */,
+				4850582423D1996400C290C9 /* LLStationCompany.m */,
+				4850582923D1A27400C290C9 /* LLPickUpPeople.h */,
+				4850582A23D1A27400C290C9 /* LLPickUpPeople.m */,
+			);
+			path = RoadLine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

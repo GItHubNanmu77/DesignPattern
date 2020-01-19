@@ -22,10 +22,10 @@
 #import "LLPickUpPeople.h"
 #import "LLRoadLine.h"
 
-@interface ViewController ()
-@property (nonatomic, strong) UIButton *btnStart;
-@property (nonatomic, strong) UIButton *btnChange;
-@property (nonatomic, strong) UIButton *btnDo;
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (nonatomic, strong) UITableView *table;
+@property (nonatomic, strong) NSArray *dataSource;
+
 @property (nonatomic, strong) LLBus *bus;
 @property (nonatomic, strong) LLDriver *workDriver;
 
@@ -37,53 +37,89 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor cyanColor];
     
-//    UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 100, 30)];
-//    nameLabel.text = @"用户";
-//    nameLabel.font = [UIFont boldSystemFontOfSize:22];
-//    [self.view addSubview:nameLabel];
-//
-//
-    [self.view addSubview:self.btnStart];
-    [self.view addSubview:self.btnChange];
-    [self.view addSubview:self.btnDo];
-     
+    [self.view addSubview:self.table];
+    
+    self.dataSource = @[@{@"title":@"单一职责原则--开车", @"function":@"startDrive"},
+                        @{@"title":@"单一职责原则--换司机",@"function":@"changeBus"},
+                        @{@"title":@"开放-封闭原则--简单工厂模式", @"function":@"setupEasyFactory"},
+                        @{@"title":@"开放-封闭原则--工厂方法模式", @"function":@"setupNormalFactory"},
+                        @{@"title":@"里式替换原则--举例", @"function":@"liShiReplace"},
+                        @{@"title":@"里式替换原则--抽象工厂模式", @"function":@"setupAbstractFactory"},
+                        @{@"title":@"依赖倒置原则--桥接模式", @"function":@"setupBridgeMode"},
+                        @{@"title":@"迪米特法则--举例", @"function":@"setupLeastKnowledge"},
+                        @{@"title":@"迪米特法则--外观模式", @"function":@"setupLeastKnowledgeImprove"},
+                        @{@"title":@"接口隔离原则", @"function":@"setupInerface"}];
+}
+
+#pragma  mark - UITableViewDelegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.dataSource.count;
 }
  
-- (UIButton*)btnStart{
-    if(!_btnStart){
-        _btnStart = [[UIButton alloc]initWithFrame:CGRectMake(150, 100, 90, 30)];
-        [_btnStart setTitle:@"开车" forState:UIControlStateNormal];
-        [_btnStart setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        _btnStart.backgroundColor = [UIColor whiteColor];
-        _btnStart.titleLabel.font = [UIFont systemFontOfSize:15];
-        [_btnStart addTarget:self action:@selector(startDrive) forControlEvents:UIControlEventTouchUpInside];
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *identifier = @"UITableViewCell";
+    UITableViewCell *cell = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:identifier];
+    if(!cell){
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
     }
-    return _btnStart;
+    NSDictionary *data = self.dataSource[indexPath.row];
+    cell.textLabel.text = data[@"title"];
+    cell.detailTextLabel.text = data[@"function"];
+    return cell;
 }
 
-- (UIButton*)btnChange{
-    if(!_btnChange){
-        _btnChange = [[UIButton alloc]initWithFrame:CGRectMake(150, 150, 90, 30)];
-        [_btnChange setTitle:@"换司机" forState:UIControlStateNormal];
-        [_btnChange setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        _btnChange.backgroundColor = [UIColor whiteColor];
-        _btnChange.titleLabel.font = [UIFont systemFontOfSize:15];
-        [_btnChange addTarget:self action:@selector(changeBus) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _btnChange;
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 0.00001f;
 }
 
-- (UIButton*)btnDo{
-    if(!_btnDo){
-        _btnDo = [[UIButton alloc]initWithFrame:CGRectMake(150, 200, 90, 30)];
-        [_btnDo setTitle:@"切换模式" forState:UIControlStateNormal];
-        [_btnDo setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        _btnDo.backgroundColor = [UIColor whiteColor];
-        _btnDo.titleLabel.font = [UIFont systemFontOfSize:15];
-        [_btnDo addTarget:self action:@selector(setupLeastKnowledge) forControlEvents:UIControlEventTouchUpInside];
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"Header"];
+    if(!header){
+        header = [[UIView alloc]init];
     }
-    return _btnDo;
+    return header;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.00001f;
+}
+
+- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    UIView *footer = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"Footer"];
+    if(!footer){
+        footer = [[UIView alloc]init];
+    }
+    return footer;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSDictionary *dic = self.dataSource[indexPath.row];
+    SEL selector = NSSelectorFromString(dic[@"function"]);
+    if ([self respondsToSelector:selector]) {
+        [self performSelector:selector];
+    }
+    
+}
+
+- (UITableView*)table{
+    if(!_table){
+        _table = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) style:UITableViewStyleGrouped];
+        _table.backgroundColor = [UIColor whiteColor];
+        _table.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        _table.delegate = self;
+        _table.dataSource = self;
+        _table.rowHeight = 44;
+    }
+    return _table;
+}
+
+ 
 
 #pragma mark - 单一职责原则
 // 简单工厂模式
@@ -216,7 +252,6 @@
     [driver drive];
     [bus showDriverInfo:driver];
     
-    
     LLStationCompany *company = [[LLStationCompany alloc] init];
     
     LLPickUpPeople *pickUp = [[LLPickUpPeople alloc] init];
@@ -229,6 +264,13 @@
     [pickUp pickUpPeople];
     [bus doSomeThing:home.place];
     [home arrived];
+}
+
+- (void)setupLeastKnowledgeImprove {
+    LLBus *bus = [[LLGreenBus alloc] init];
+    LLDriver *driver = [bus needDriver];
+    [driver drive];
+    [bus showDriverInfo:driver];
     
     LLRoadLine *line = [[LLRoadLine alloc] init];
     [bus doSomeThing:line.places];
@@ -236,8 +278,23 @@
 }
 
 #pragma mark - 接口隔离原则
-- (void)setup2 {
+/**
+ 在设计接口时，尤其是在向现有的接口添加方法时，我们需要仔细斟酌这些方法是否是处理同一类任务的：如果是则可以放在一起；如果不是则需要做拆分。
+
+ 
+UITableView的UITableViewDelegate和UITableViewDataSource这两个协议大家应该非常熟悉。这两个协议里的方法都是与UITableView相关的，但iOS SDK的设计者却把这些方法放在不同的两个协议中。UITableView协议的设计者很好地实践了接口分离的原则。原因就是这两个协议所包含的方法所处理的任务是不同的两种：
+
+ UITableViewDelegate：含有的方法是UITableView的实例告知其代理一些点击事件的方法，即事件的传递，方向是从UITableView的实例到其代理。
+
+ UITableViewDataSource：含有的方法是UITableView的代理传给UITableView一些必要数据供UITableView展示出来，即数据的传递，方向是从UITableView的代理到UITableView。
+ */
+- (void)setupInerface {
     
+    LLCar *car = [[LLCar alloc] init];
+    id<LLDriveProtocol> people = [[LLPeopleZhang alloc] init];
+    [car haveSites];
+    [car needHaveLicensePeople:people];
+    [car startEngin];
 }
 
 

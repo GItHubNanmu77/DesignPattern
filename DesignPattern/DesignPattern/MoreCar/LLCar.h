@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "LLBusProtocol.h"
+#import "LLBusSettingProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LLCar : NSObject <LLBusProtocol>
+@interface LLCar : NSObject <LLBusProtocol, LLBusSettingProtocol>
  
-- (void)goSomeWhere:(NSString *)place;
+
 @end
 
 NS_ASSUME_NONNULL_END

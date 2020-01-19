@@ -13,8 +13,16 @@
 - (void)needHaveLicensePeople:(id<LLDriveProtocol>)people {
     [people haveLicense];
 }
+ 
+
+- (void)haveSites {
+    NSLog(@"我有4个座位");
+}
 
 
+- (void)startEngin {
+    NSLog(@"发动引擎");
+}
 
 
 @end
