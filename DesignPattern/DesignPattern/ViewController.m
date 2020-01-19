@@ -102,7 +102,9 @@
     NSDictionary *dic = self.dataSource[indexPath.row];
     SEL selector = NSSelectorFromString(dic[@"function"]);
     if ([self respondsToSelector:selector]) {
-        [self performSelector:selector];
+        IMP imp = [self methodForSelector:selector];
+        void (*func)(id, SEL) = (void *)imp;
+        func(self, selector);
     }
     
 }
@@ -114,7 +116,7 @@
         _table.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         _table.delegate = self;
         _table.dataSource = self;
-        _table.rowHeight = 44;
+        _table.rowHeight = 50;
     }
     return _table;
 }
