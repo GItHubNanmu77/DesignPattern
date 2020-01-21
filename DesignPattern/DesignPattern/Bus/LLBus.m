@@ -21,7 +21,21 @@
     NSLog(@"开车。。。。。司机编号：%ld，姓名是：%@",driver.num,driver.name);
 }
 
- 
+- (LLDriver *)needOneDriver {
+    LLDriver *driver = [[LLDriver alloc] init];
+    driver.num = 0;
+    driver.name = @"zhang";
+    driver.haveLicense = YES;
+    return driver;
+}
+
+- (LLDriver *)needAnotherDriver {
+    LLDriver *driver = [[LLDriver alloc] init];
+    driver.num = 22;
+    driver.name = @"li";
+    driver.haveLicense = YES;
+    return driver;
+}
 
 - (LLDriver *)needDriverNum:(NSInteger)num {
     LLDriver *driver;

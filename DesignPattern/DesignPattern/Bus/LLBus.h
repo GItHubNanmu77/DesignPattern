@@ -18,6 +18,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger sitesCount;
 
 - (void)showDriverInfo:(LLDriver *)driver;
+
+//单一职责
+- (LLDriver *)needOneDriver;
+//单一职责
+- (LLDriver *)needAnotherDriver;
+
 ///简单工厂
 - (LLDriver *)needDriverNum:(NSInteger)num;
 ///工厂方法

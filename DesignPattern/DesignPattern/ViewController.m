@@ -26,9 +26,6 @@
 @property (nonatomic, strong) UITableView *table;
 @property (nonatomic, strong) NSArray *dataSource;
 
-@property (nonatomic, strong) LLBus *bus;
-@property (nonatomic, strong) LLDriver *workDriver;
-
 @end
 
 @implementation ViewController
@@ -73,30 +70,6 @@
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 0.00001f;
-}
-
-- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"Header"];
-    if(!header){
-        header = [[UIView alloc]init];
-    }
-    return header;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 0.00001f;
-}
-
-- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    UIView *footer = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"Footer"];
-    if(!footer){
-        footer = [[UIView alloc]init];
-    }
-    return footer;
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSDictionary *dic = self.dataSource[indexPath.row];
@@ -128,28 +101,28 @@
 - (void)startDrive {
     //初始化公交车
     LLBus *bus = [[LLBus alloc] init];
-    self.bus = bus;
     
     //初始化司机
-    LLDriver *driver = [self.bus needDriverNum:1];
-    self.workDriver = driver;
+    LLDriver *driver = [bus needOneDriver];
     
     //司机开车
-    [self.workDriver drive];
+    [driver drive];
     
     //显示司机信息
-    [self.bus showDriverInfo:self.workDriver];
+    [bus showDriverInfo:driver];
     
 }
 
 // 换司机
 - (void)changeBus {
+    //初始化公交车
+    LLBus *bus = [[LLBus alloc] init];
     
-    self.workDriver = [self.bus needDriverNum:2];
+    LLDriver *driver  = [bus needAnotherDriver];
+      
+    [driver drive];
     
-    [self.workDriver drive];
-    
-    [self.bus showDriverInfo:self.workDriver];
+    [bus showDriverInfo:driver ];
 }
 
 
